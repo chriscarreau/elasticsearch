@@ -4,6 +4,7 @@ install: true
 
 dist: trusty
 jdk:
+  - openjdk8
   - openjdk13
   - openjdk-ea
 
