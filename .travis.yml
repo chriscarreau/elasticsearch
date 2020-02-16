@@ -20,4 +20,6 @@ branches:
 script:
   - export JAVA8_HOME=$OPENJDK8_JAVA_HOME
   - export JAVA11_HOME=$OPENJDK11_JAVA_HOME
+  - export JAVA12_HOME=~/openjdk12
+  - ~/bin/install-jdk.sh --install openjdk12 --target $JAVA12_HOME
   - ./gradlew --continue clean build --scan -s -p modules/
