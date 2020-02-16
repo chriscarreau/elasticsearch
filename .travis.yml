@@ -5,12 +5,7 @@ install: true
 dist: trusty
 jdk:
   - openjdk13
-  - openjdk-ea
 
-
-matrix:
-  allow_failures:
-    - jdk: openjdk-ea
 
 branches:
   only:
@@ -21,5 +16,6 @@ script:
   - export JAVA8_HOME=$OPENJDK8_JAVA_HOME
   - export JAVA11_HOME=$OPENJDK11_JAVA_HOME
   - export JAVA12_HOME=~/openjdk12
-  - ~/bin/install-jdk.sh --install openjdk12 --target $JAVA12_HOME
+  - export JAVA13_HOME=$JAVA_HOME
+  - ~/bin/install-jdk.sh  --target $JAVA12_HOME --feature "12" --license "GPL"
   - ./gradlew --continue clean build --scan -s -p modules/
