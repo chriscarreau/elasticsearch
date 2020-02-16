@@ -4,7 +4,6 @@ install: true
 
 dist: trusty
 jdk:
-  - openjdk8
   - openjdk13
   - openjdk-ea
 
@@ -20,4 +19,6 @@ branches:
     
 
 script:
+  - export JAVA8_HOME=$HOME/openjdk8
+  - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk8 --target $JAVA8_HOME
   - ./gradlew --continue clean build --scan -s -p modules/
