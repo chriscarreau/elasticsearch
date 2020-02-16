@@ -16,9 +16,8 @@ branches:
   only:
   - master
   - v7.6.0
-    
 
 script:
-  - export JAVA8_HOME=$HOME/openjdk8
-  - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk8 --target $JAVA8_HOME
+  - export JAVA8_HOME=$OPENJDK8_JAVA_HOME
+  - export JAVA11_HOME=$OPENJDK11_JAVA_HOME
   - ./gradlew --continue clean build --scan -s -p modules/
