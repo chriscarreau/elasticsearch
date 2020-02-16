@@ -18,4 +18,4 @@ script:
   - export JAVA12_HOME=~/openjdk12
   - export JAVA13_HOME=$JAVA_HOME
   - ~/bin/install-jdk.sh  --target $JAVA12_HOME --feature "12" --license "GPL"
-  - ./gradlew --continue clean build --scan -s -p modules/ingest-geoip
+  - ./gradlew --continue clean build --scan -s -p modules/
